@@ -6,6 +6,10 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "11.10.0",
+    "npm": "6.7.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://git.cs.dal.ca/menta/marine-tourism-backend.git"
