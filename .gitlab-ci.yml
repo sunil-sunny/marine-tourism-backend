@@ -1,4 +1,10 @@
-image: node:8.7.0
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
 
 before_script:  
   - apt-get update -qq && apt-get install
