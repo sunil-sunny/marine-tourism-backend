@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "This is a backend prototype of Team 6 in course of Technology Innovation.",
   "scripts": {
-    "start": "nodemon server.js",
-    "start-dev": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
