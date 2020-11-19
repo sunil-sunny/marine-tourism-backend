@@ -13,7 +13,7 @@ build and test:
   script:
     - npm install
   tags:
-    - ugrad
+    - dalfcs_gitlab_docker_ci
   artifacts:
     paths:
       - node_modules/
@@ -22,7 +22,7 @@ deploy:
   stage: deploy
   image: ruby:latest
   tags:
-    - ugrad
+    - dalfcs_gitlab_docker_ci
   script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
