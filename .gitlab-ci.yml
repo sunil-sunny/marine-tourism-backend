@@ -1,9 +1,9 @@
 image: node:latest
 stages:
-- production
-production:
+- deploy
+deploy:
 type: deploy
-stage: production
+stage: deploy
 image: ruby:latest
 tags:
     - grad
