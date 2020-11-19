@@ -13,7 +13,7 @@ build and test:
   script:
     - npm install
   tags:
-    - grad
+    - ugrad
   artifacts:
     paths:
       - node_modules/
@@ -22,7 +22,7 @@ deploy:
   stage: deploy
   image: ruby:latest
   tags:
-    - grad
+    - ugrad
   script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
