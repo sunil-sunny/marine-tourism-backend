@@ -1,0 +1,34 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+build and test:
+  stage: build
+  script:
+    - npm install
+  tags:
+    - dalfcs_gitlab_docker_ci
+  artifacts:
+    paths:
+      - node_modules/
+  
+deploy:
+  stage: deploy
+  image: ruby:latest
+  tags:
+    - dalfcs_gitlab_docker_ci
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
+  only:
+    - master
+
+ 
