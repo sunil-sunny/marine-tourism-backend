@@ -1,15 +1,18 @@
-const express = require('express')
-const app = express()
-const profileMagementRoute=require('./routes/profileManagementRoute')
+const express = require('express');
+const app = express();
+require('dotenv').config();
+const profileMagementRoute=require('./routes/profileManagementRoute');
 var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-var cors = require('cors')
+var cors = require('cors');
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
+
+//console.log(process.env);
 
 //connect to DB
 mongoose
-    .connect('mongodb+srv://saisunil:mongo!123@cluster0-i4z56.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+    .connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
