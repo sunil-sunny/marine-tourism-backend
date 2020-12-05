@@ -41,7 +41,9 @@ const logoutUser = async (req,res) => {
                         return token.token !== req.token
                 })
                 await req.user.save()
-                res.status(200).send('Logged out')
+                res.status(200).send({
+                        "success":"true"
+                })
         } catch (e) {
                 res.status(500).send('unable to logout')
         }
@@ -52,7 +54,9 @@ const logoutAllUsers = async (req,res) => {
         try {
                 req.user.tokens = []
                 await req.user.save()
-                res.status(200).send('Logged Out All Users')
+                res.status(200).send({
+                        "success":"true"
+                })
         } catch (e) {
                 res.send('Error while logging out all users');
         }
