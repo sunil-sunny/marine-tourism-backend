@@ -14,6 +14,15 @@ const tourismSpotSchema = new mongoose.Schema({
         required: true
 
     },
+    cover_photo: {
+
+        type: String,
+        required: true
+    },
+    mobile:{
+        type:Number,
+        required:true
+    },
     address: {
         type: String,
         required: true
