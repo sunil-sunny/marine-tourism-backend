@@ -9,7 +9,11 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 var cors = require('cors');
 app.use(bodyParser.json());
-app.use(cors());
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+  }
+app.use(cors(corsOptions));
 
 mongoose
     .connect(process.env.MONGO_URI, {
